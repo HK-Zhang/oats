@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///D:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 11.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2015-07-23T12:59:43" Importance="High" Text="Code generation or text transformation started." />
+  <Message Timestamp="2015-07-23T12:59:44" Importance="Diagnostic" Text="Name = ClassTemplate" />
+  <Message Timestamp="2015-07-23T12:59:44" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2015-07-23T12:59:44" Importance="Diagnostic" Text="ProjectPath = ..\OverallLib\OverallLib.csproj" />
+  <Message Timestamp="2015-07-23T12:59:44" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2015-07-23T12:59:44" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2015-07-23T12:59:44" Importance="Diagnostic" Text="TemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2015-07-23T12:59:44" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2015-07-23T12:59:44" Importance="Medium" Text="Overall's Text Template Binding: 'ClassTemplate' will apply ClassTemplate.t4 to: 'Overall::Persistencer' -  (Class), 'Overall::DataPool' -  (Class), 'Overall::Stock' -  (Class), 'Overall::URLPool' -  (Class), 'Overall::HtmlParser' -  (Class), 'Overall::WebReader' -  (Class), 'Overall::ReaderJobManger' -  (Class), 'Overall::PaserJobManager' -  (Class), 'Overall::SyncContext' -  (Class), 'Overall::URLManager' -  (Class) " />
+  <Message Timestamp="2015-07-23T12:59:54" Importance="Medium" Text="'Overall::Persistencer' -  (Class) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\Persistencer.cs" />
+  <Message Timestamp="2015-07-23T12:59:54" Importance="Medium" Text="'Overall::DataPool' -  (Class) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\DataPool.cs" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Medium" Text="'Overall::Stock' -  (Class) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\Stock.cs" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Medium" Text="'Overall::URLPool' -  (Class) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\URLPool.cs" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Medium" Text="'Overall::HtmlParser' -  (Class) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\HtmlParser.cs" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Medium" Text="'Overall::WebReader' -  (Class) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\WebReader.cs" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Medium" Text="'Overall::ReaderJobManger' -  (Class) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\ReaderJobManger.cs" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Medium" Text="'Overall::PaserJobManager' -  (Class) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\PaserJobManager.cs" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Medium" Text="'Overall::SyncContext' -  (Class) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\SyncContext.cs" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Medium" Text="'Overall::URLManager' -  (Class) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\URLManager.cs" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Diagnostic" Text="Name = InterfaceTemplate" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Diagnostic" Text="ProjectPath = ..\OverallLib\OverallLib.csproj" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Diagnostic" Text="TemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2015-07-23T12:59:55" Importance="Medium" Text="Overall's Text Template Binding: 'InterfaceTemplate' will apply InterfaceTemplate.t4 to: 'Overall::IParser' -  (Interface), 'Overall::IReader' -  (Interface), 'Overall::IJobManager' -  (Interface) " />
+  <Message Timestamp="2015-07-23T12:59:56" Importance="Medium" Text="'Overall::IParser' -  (Interface) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\IParser.cs" />
+  <Message Timestamp="2015-07-23T12:59:56" Importance="Medium" Text="'Overall::IReader' -  (Interface) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\IReader.cs" />
+  <Message Timestamp="2015-07-23T12:59:56" Importance="Medium" Text="'Overall::IJobManager' -  (Interface) : success (file replaced) - D:\Demo Projects\GOSTools\WebSpider\OverallLib\GeneratedCode\IJobManager.cs" />
+  <Message Timestamp="2015-07-23T12:59:56" Importance="Diagnostic" Text="Name = StructTemplate" />
+  <Message Timestamp="2015-07-23T12:59:56" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2015-07-23T12:59:56" Importance="Diagnostic" Text="ProjectPath = ..\OverallLib\OverallLib.csproj" />
+  <Message Timestamp="2015-07-23T12:59:56" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2015-07-23T12:59:56" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2015-07-23T12:59:56" Importance="Diagnostic" Text="TemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2015-07-23T12:59:56" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2015-07-23T12:59:56" Importance="Medium" Text="Overall's Text Template Binding: 'StructTemplate' will apply StructTemplate.t4 to: 'Overall::Persistencer' -  (Class), 'Overall::DataPool' -  (Class), 'Overall::Stock' -  (Class), 'Overall::URLPool' -  (Class), 'Overall::HtmlParser' -  (Class), 'Overall::WebReader' -  (Class), 'Overall::ReaderJobManger' -  (Class), 'Overall::PaserJobManager' -  (Class), 'Overall::SyncContext' -  (Class), 'Overall::URLManager' -  (Class) " />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::Persistencer' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::DataPool' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::Stock' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::URLPool' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::HtmlParser' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::WebReader' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::ReaderJobManger' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::PaserJobManager' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::SyncContext' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::URLManager' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="The selection included 4 elements which were not bound to a template." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="Diagnostic" Text="'Overall::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2015-07-23T12:59:57" Importance="High" Text="Code generation complete. Errors: 0. Warnings: 0." />
+</Log>

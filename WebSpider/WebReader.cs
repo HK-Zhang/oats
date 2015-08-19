@@ -65,10 +65,10 @@ public class WebReader : IReader
     {
         //read the stream into a string
         //OutputHelper.Output("ProcessWebResponse Thread: " + Thread.CurrentThread.ManagedThreadId.ToString() + " Start to run!");
-
+        WebRequest webrequest = (WebRequest)result.AsyncState;
         try
         {
-            WebRequest webrequest = (WebRequest)result.AsyncState;
+            
             using (WebResponse webresponse = webrequest.EndGetResponse(result))
             {
                 Stream ReceiveStream = webresponse.GetResponseStream();
@@ -79,8 +79,8 @@ public class WebReader : IReader
         }
         catch (Exception ex)
         {
-            
-            OutputHelper.Output("ProcessWebResponse failed: "+ ex.Message);
+
+            OutputHelper.Output("ProcessWebResponse failed: " + ex.Message + ". URL" + webrequest.RequestUri.ToString());
         }
 
         SyncContext.ThreadQ.Dequeue();

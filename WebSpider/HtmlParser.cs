@@ -17,7 +17,7 @@ public class HtmlParser : IParser
 	{
         
 
-        string html;
+        string html="";
 
         try
         {
@@ -33,7 +33,7 @@ public class HtmlParser : IParser
         }
         catch (Exception ex)
         {
-            OutputHelper.Output("Build Stock Object failed: "+ex.Message);
+            OutputHelper.Output("Build Stock Object failed: " + ex.Message + ". Content:" + html);
         }
 
        

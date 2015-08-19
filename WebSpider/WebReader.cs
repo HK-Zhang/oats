@@ -18,13 +18,16 @@ public class WebReader : IReader
 	public virtual string ReadHTML(string URL)
 	{
 
-        WebRequest req = null;
+        HttpWebRequest req = null;
         //WebResponse result = null;
         //string resultstring="";
 
         try
         {
-            req = WebRequest.Create(URL);
+            req = WebRequest.Create(URL) as HttpWebRequest;
+            req.KeepAlive = false;//不建立持久性连接
+            //req.Timeout = 5000;//连接网址的超时时间
+            req.ReadWriteTimeout = 10000;//读取网址内容的超时时间
             //result = req.GetResponse();
             //Stream ReceiveStream = result.GetResponseStream();
 
@@ -68,7 +71,7 @@ public class WebReader : IReader
         WebRequest webrequest = (WebRequest)result.AsyncState;
         try
         {
-            
+
             using (WebResponse webresponse = webrequest.EndGetResponse(result))
             {
                 Stream ReceiveStream = webresponse.GetResponseStream();
@@ -81,6 +84,12 @@ public class WebReader : IReader
         {
 
             OutputHelper.Output("ProcessWebResponse failed: " + ex.Message + ". URL" + webrequest.RequestUri.ToString());
+            System.GC.Collect();//强制垃圾回收,并释放资源
+        }
+        finally {
+            webrequest.Abort();
+           
+
         }
 
         SyncContext.ThreadQ.Dequeue();

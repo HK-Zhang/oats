@@ -10,7 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-public class PaserJobManager : IJobManager
+/// <summary>
+/// Not yet implement multi-thread. So one parser is needed to be initialized.
+/// </summary>
+/// <typeparam name="T"></typeparam>
+public class PaserJobManager<T> : IJobManager
 {
 	public virtual int TimerInterval
 	{
@@ -19,38 +23,44 @@ public class PaserJobManager : IJobManager
 	}
 
 
-	public List<IParser> Parsers =new List<IParser>();
+    public List<IParser<T>> Parsers = new List<IParser<T>>();
 
-    public PaserJobManager() 
+    public PaserJobManager(IParser<T> parser) 
     {
-        InitiateJobs(1);
+        InitiateJobs(1, parser);
     }
 
 	public virtual void Run()
 	{
         Thread.Sleep(TimerInterval);
-        OutputHelper.Output("Start to build Stock Object form DataPool.");
+        OutputHelper.Output("Start to parse data form DataPool.");
         while (SyncContext.ThreadQ.Count > 0 || !DataPool.IsEmpty())
         {
-            foreach (HtmlParser item in Parsers)
+            foreach (IParser<T> item in Parsers)
             {
                 item.ReadFromPool();
             }
 
             //Thread.Sleep(TimerInterval);
         }
-        OutputHelper.Output("Start to build Stock Object completed.");
+        OutputHelper.Output("parse data is completed.");
         
 	}
 
-	public virtual void InitiateJobs(int jobCount)
+    public virtual void InitiateJobs(int jobCount, IParser<T> parser)
 	{
 		while(jobCount>0)
         {
-            Parsers.Add(new HtmlParser());
+            Type t = parser.GetType();
+            Parsers.Add((IParser<T>)Activator.CreateInstance(t));
             jobCount--;
         }
 	}
+
+    public virtual void InitiateJobs(int jobCount)
+    {
+
+    }
 
 	public virtual void SetupTimeInterval(int timeInterval)
 	{

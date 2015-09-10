@@ -10,5 +10,6 @@ public class SyncContext
 {
     public static Queue ThreadQ = Queue.Synchronized(new Queue());
     public static Queue StockQ = Queue.Synchronized(new Queue());
+    public static Queue StockHistoryQ = Queue.Synchronized(new Queue());
 }
 

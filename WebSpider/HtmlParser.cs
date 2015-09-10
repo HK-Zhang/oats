@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class HtmlParser : IParser
+public class HtmlParser : IParser<Stock>
 {
     public List<Stock> stockList = new List<Stock>();
 
@@ -27,7 +27,7 @@ public class HtmlParser : IParser
                 Stock stockItem = ParseHtml(html);
                 if (stockItem != null)
                 {
-                    SyncContext.StockQ.Enqueue(ParseHtml(html));
+                    SyncContext.StockQ.Enqueue(stockItem);
                 }
             }
         }
@@ -75,6 +75,7 @@ public class HtmlParser : IParser
         stockItem.mrp = double.Parse(vals[39]);
         stockItem.TotalMarketCap = double.Parse(vals[40]);
         stockItem.NegotiableMarketCap = double.Parse(vals[41]);
+        stockItem.TransactionDate = DateTime.Now;
 
         return stockItem;
 	}

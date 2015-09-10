@@ -9,11 +9,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public interface IJobManager 
+public interface IJobManager
 {
 	void Run();
 
-	void InitiateJobs(int jobCount);
+    void InitiateJobs(int jobCount);
 
 	void SetupTimeInterval(int timeInterval);
 

@@ -9,11 +9,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public interface IParser 
+public interface IParser <T>
 {
 	void ReadFromPool();
 
-	Stock ParseHtml(string htmlText);
+	T ParseHtml(string htmlText);
 
 }
 

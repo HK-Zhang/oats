@@ -13,7 +13,7 @@ using System.Text;
 
 public class Persistencer
 {
-    public const string sqlTemplate = @"INSERT INTO [dbo].[T_StockTransaction] ([StockCode], [TotalMarketCap], [NegotiableMarketCap], [OpenPrice], [HandOver], [Volume], [TodayHigh], [TodayLow], [LatestPrice], [PreviousClose], [Value], [mrp], [ttm], [MeanPrice], [ExternalExp], [InternalExp]) VALUES (N'{0}', {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15})";
+    public const string sqlTemplate = @"INSERT INTO [dbo].[T_StockHistory] ([StockCode], [TotalMarketCap], [NegotiableMarketCap], [OpenPrice], [HandOver], [Volume], [TodayHigh], [TodayLow], [LatestPrice], [PreviousClose], [Value], [mrp], [ttm], [MeanPrice], [ExternalExp], [InternalExp],[TransactionDate]) VALUES (N'{0}', {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15},'{16}')";
     public const string cleanSQLTemplate = @"Delete from [dbo].[T_StockTransaction] where TransactionDate = Convert(varchar,Getdate(),101)";
 
 	public virtual string GenerateSQL(Stock stockItem)
@@ -33,7 +33,8 @@ public class Persistencer
             stockItem.ttm,
             stockItem.MeanPrice,
             stockItem.ExternalExp,
-            stockItem.InternalExp);
+            stockItem.InternalExp,
+            stockItem.TransactionDate);
 	}
 
     public virtual void UpdateIntoDB()

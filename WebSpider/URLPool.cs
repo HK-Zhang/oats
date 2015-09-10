@@ -16,6 +16,7 @@ public class URLPool
     private static object lockObjForPop = new object();
     private static object lockObjForPush = new object();
     public const string ENDOFQUEUE = "END";
+    public static event EventHandler PoolEmptyEvent;
 
     public static string Pop()
     {
@@ -24,6 +25,10 @@ public class URLPool
             if (URLs.Count > 0)
                 return URLs.Dequeue();
             else
+                if (PoolEmptyEvent != null) {
+                    PoolEmptyEvent.BeginInvoke(null, null,null,null);
+                    PoolEmptyEvent = null;
+                }
                 return ENDOFQUEUE;
         }
         

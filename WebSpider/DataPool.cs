@@ -15,6 +15,7 @@ public class DataPool
     private static object lockObjForPop = new object();
     private static object lockObjForPush = new object();
     public const string ENDOFQUEUE = "END";
+    public static event EventHandler PoolEmptyEvent;
 
 	public static void Push(string htmlText)
 	{
@@ -39,6 +40,11 @@ public class DataPool
             if (htmlTxtList.Count > 0)
                 return htmlTxtList.Dequeue();
             else
+                if (PoolEmptyEvent != null)
+                {
+                    PoolEmptyEvent(null, null);
+                    PoolEmptyEvent = null;
+                }
                 return ENDOFQUEUE;
         }
 	}

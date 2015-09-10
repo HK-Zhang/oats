@@ -17,6 +17,15 @@ public class Stock
 		set;
 	}
 
+    /// <summary>
+    /// 交易日
+    /// </summary>
+    public virtual DateTime TransactionDate
+    {
+        get;
+        set;
+    }
+
 	/// <summary>
 	/// 总市值
 	/// </summary>

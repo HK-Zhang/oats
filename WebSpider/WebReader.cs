@@ -84,7 +84,8 @@ public class WebReader : IReader
         {
 
             OutputHelper.Output("ProcessWebResponse failed: " + ex.Message + ". URL" + webrequest.RequestUri.ToString());
-            System.GC.Collect();//强制垃圾回收,并释放资源
+            URLPool.Push(webrequest.RequestUri.ToString());
+            //System.GC.Collect();//强制垃圾回收,并释放资源
         }
         finally {
             webrequest.Abort();
@@ -103,11 +104,22 @@ public class WebReader : IReader
         OutputHelper.Output("Thread of Reading URL: " + Thread.CurrentThread.ManagedThreadId.ToString() + " Start to run!");
 
         SyncContext.ThreadQ.Enqueue(Thread.CurrentThread.ManagedThreadId);
-        while ((url=URLPool.Pop()) != URLPool.ENDOFQUEUE) 
+
+        while (true) 
         {
             //ReadIntoPool(ReadHTML(url));
-            ReadHTML(url);
+            if (SyncContext.ThreadQ.Count >= 30) {
+                Thread.Sleep(1000);
+                continue;
+            }
+                
+
+            if ((url = URLPool.Pop()) != URLPool.ENDOFQUEUE)
+                ReadHTML(url);
+            else
+                break;
         }
+
         SyncContext.ThreadQ.Dequeue();
 
         OutputHelper.Output("Thread of Reading URL completed.");

@@ -19,6 +19,8 @@ public class URLManager
 
 
     public const string SQLFetchStockCode = "select StockCode,(case Market when 'sh' then 1 when 'sz' then 2 else 3 end) as Mkt from M_StockInfo";
+    public const string SQLFetchStockCodeSina = "select top 200 StockCode as Mkt from M_StockInfo where StockCode not in (select StockCode from T_StockHistory)";
+
 
 	public static void PrepareURLPool()
 	{
@@ -50,7 +52,7 @@ public class URLManager
     public static void PrepareSinaURLPool() {
         OutputHelper.Output("Start to generate Sina URL.");
 
-        SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringLocalTransaction, CommandType.Text, SQLFetchStockCode, null);
+        SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringLocalTransaction, CommandType.Text, SQLFetchStockCodeSina, null);
 
         try
         {

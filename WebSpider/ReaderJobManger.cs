@@ -18,15 +18,15 @@ public class ReaderJobManger : IJobManager
     public ReaderJobManger() 
     {
 
-        if (Environment.ProcessorCount > 2)
-        {
-            InitiateJobs(Environment.ProcessorCount - 1);
-        }
-        else {
-            InitiateJobs(1);
-        }
-
-        ThreadPool.SetMaxThreads(100,500);
+        //if (Environment.ProcessorCount > 2)
+        //{
+        //    InitiateJobs(Environment.ProcessorCount - 1);
+        //}
+        //else {
+        //    InitiateJobs(1);
+        //}
+        InitiateJobs(1);
+        ThreadPool.SetMaxThreads(100,50);
     }
 
 	public virtual void Run()

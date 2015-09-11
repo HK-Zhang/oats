@@ -25,7 +25,7 @@ public class ReaderJobManger : IJobManager
         //else {
         //    InitiateJobs(1);
         //}
-        InitiateJobs(1);
+        InitiateJobs(1);//only one webreader is supported now. if more webreader crated,program will be in dead loop
         ThreadPool.SetMaxThreads(100,50);
     }
 

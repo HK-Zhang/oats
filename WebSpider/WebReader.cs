@@ -116,7 +116,7 @@ public class WebReader : IReader
 
             if ((url = URLPool.Pop()) != URLPool.ENDOFQUEUE)
                 ReadHTML(url);
-            else
+            else if (SyncContext.ThreadQ.Count==1)
                 break;
         }
 

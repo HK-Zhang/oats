@@ -32,9 +32,18 @@ namespace WebSpider
             //Console.ReadLine();
 
             URLManager.PrepareSinaURLPool();
-            //URLPool.Push(@"http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/601985.phtml?year=2015");
+            //URLPool.Push(@"http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/600016.phtml?year=2012&jidu=2");
+            //URLPool.Push(@"http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/600016.phtml?year=2008&jidu=4");
+            //URLPool.Push(@"http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/600016.phtml?year=2003&jidu=2");
             URLPool.PoolEmptyEvent += URLPool_PoolEmptyEvent;
             readerJob.Run();
+
+            //PaserJobManager<Stock> SHparserJob = new PaserJobManager<Stock>(new SinaHtmlParser());
+            //SHparserJob.SetupTimeInterval(3000);
+            //SHparserJob.Run();
+
+            //Persistencer StockPersistencer = new Persistencer();
+            //StockPersistencer.UpdateIntoDB();
 
             //PaserJobManager<String> parserJob = new PaserJobManager<String>(new SinaUrlParser());
             //PaserJobManager<StockHistory> parserJob = new PaserJobManager<StockHistory>(new SinaHtmlParser());

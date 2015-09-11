@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 public class SinaUrlParser : IParser<String>
 {
@@ -23,6 +24,14 @@ public class SinaUrlParser : IParser<String>
 
         try
         {
+            while (true) {
+                if (SyncContext.ThreadQ.Count == 0)
+                    break;
+                else {
+                    Thread.Sleep(1000);
+                }
+            }
+
             while ((html = DataPool.Pop()) != DataPool.ENDOFQUEUE)
             {
                 doc.LoadHtml(html);

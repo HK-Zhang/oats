@@ -66,11 +66,29 @@ namespace WebSpider
 
             PaserJobManager<Stock> SHparserJob = new PaserJobManager<Stock>(new SinaHtmlParser());
             SHparserJob.SetupTimeInterval(3000);
+            Task.Run(new Action(UpdateDB));
+            //Task.Run(new Action(UpdateDB));
             SHparserJob.Run();
 
-            Persistencer StockPersistencer = new Persistencer();
-            StockPersistencer.UpdateIntoDB();
+        }
 
+        static void UpdateDB() {
+
+            Persistencer StockPersistencer = new Persistencer();
+
+            while (true)
+            {
+                if (!DataPool.IsEmpty() || SyncContext.ThreadQ.Count > 0)
+                {
+                    Thread.Sleep(1000);
+                    StockPersistencer.UpdateIntoDB();
+
+                }
+                else {
+                    StockPersistencer.UpdateIntoDB();//double check to ensure all object have been processed
+                    break;
+                }
+            }
             Console.ReadLine();
         }
     }

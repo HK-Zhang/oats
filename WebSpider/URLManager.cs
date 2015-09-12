@@ -19,7 +19,7 @@ public class URLManager
 
 
     public const string SQLFetchStockCode = "select StockCode,(case Market when 'sh' then 1 when 'sz' then 2 else 3 end) as Mkt from M_StockInfo";
-    public const string SQLFetchStockCodeSina = "select top 300 StockCode as Mkt from M_StockInfo where StockCode not in (select distinct StockCode from T_StockHistory)";
+    public const string SQLFetchStockCodeSina = "select top 10 StockCode as Mkt from M_StockInfo where StockCode not in (select distinct StockCode from T_StockHistory)";
 
 
 	public static void PrepareURLPool()

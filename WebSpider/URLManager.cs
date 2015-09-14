@@ -13,13 +13,15 @@ using System.Text;
 
 public class URLManager
 {
-	//public const string URLTemplate=@"http://nufm3.dfcfw.com/EM_Finance2014NumericApplication/JS.aspx?type=CT&cmd={0}{1}&sty=FDT&st=z&sr=&p=&ps=&lvl=&cb=&js=var%20jsquote=(x);&token=beb0a0047196124721f56b0f0ff5a27c&rt=0.6847063523412638";
+	public const string URLTemplate=@"http://nufm3.dfcfw.com/EM_Finance2014NumericApplication/JS.aspx?type=CT&cmd={0}{1}&sty=FDT&st=z&sr=&p=&ps=&lvl=&cb=&js=var%20jsquote=(x);&token=beb0a0047196124721f56b0f0ff5a27c&rt=0.6847063523412638";
     //public const string URL = @"http://quote.591hx.com/StockList.aspx?item=all_a&name=%E5%88%86%E7%B1%BB";
-    public const string URLTemplate = @"http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/{0}.phtml?year=2015";
+    //public const string URLTemplate = @"http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/{0}.phtml?year=2015";
 
 
     public const string SQLFetchStockCode = "select StockCode,(case Market when 'sh' then 1 when 'sz' then 2 else 3 end) as Mkt from M_StockInfo";
-    public const string SQLFetchStockCodeSina = "select top 10 StockCode as Mkt from M_StockInfo where StockCode not in (select distinct StockCode from T_StockHistory)";
+    public const string SQLFetchStockCodeSina = "select top 10 StockCode as Mkt from M_StockInfo where StockCode not in (select StockCode from TP_StockCode)";
+    public const string SQLCleanTempTable = "truncate table TP_StockCode";
+    public const string SQLSetupTempTable = "insert into TP_StockCode select * from [dbo].[V_ProcessedStockCode]";
 
 
 	public static void PrepareURLPool()
@@ -52,6 +54,8 @@ public class URLManager
     public static void PrepareSinaURLPool() {
         OutputHelper.Output("Start to generate Sina URL.");
 
+        SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringLocalTransaction, CommandType.Text, SQLCleanTempTable, null);
+        SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringLocalTransaction, CommandType.Text, SQLSetupTempTable, null);
         SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringLocalTransaction, CommandType.Text, SQLFetchStockCodeSina, null);
 
         try

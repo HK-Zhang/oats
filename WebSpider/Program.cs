@@ -17,40 +17,40 @@ namespace WebSpider
 
             System.Net.ServicePointManager.DefaultConnectionLimit = 50;
 
-            //URLManager.PrepareURLPool();
-            ////URLPool.Push("http://nufm3.dfcfw.com/EM_Finance2014NumericApplication/JS.aspx?type=CT&cmd=0022012&sty=FDT&st=z&sr=&p=&ps=&lvl=&cb=&js=var%20jsquote=(x);&token=beb0a0047196124721f56b0f0ff5a27c&rt=0.6847063523412638");
-            ////ReaderJobManger readerJob = new ReaderJobManger();
-            //readerJob.Run();
-
-            //PaserJobManager parserJob = new PaserJobManager();
-            //parserJob.SetupTimeInterval(120000);
-            //parserJob.Run();
-
-            //Persistencer StockPersistencer = new Persistencer();
-            //StockPersistencer.CleanDB();
-            //StockPersistencer.UpdateIntoDB();
-
-            //Console.ReadLine();
-
-            URLManager.PrepareSinaURLPool();
-            //URLPool.Push(@"http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/600016.phtml?year=2012&jidu=2");
-            //URLPool.Push(@"http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/600016.phtml?year=2008&jidu=4");
-            //URLPool.Push(@"http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/600016.phtml?year=2003&jidu=2");
-            URLPool.PoolEmptyEvent += URLPool_PoolEmptyEvent;
+            URLManager.PrepareURLPool();
+            //URLPool.Push("http://nufm3.dfcfw.com/EM_Finance2014NumericApplication/JS.aspx?type=CT&cmd=0022012&sty=FDT&st=z&sr=&p=&ps=&lvl=&cb=&js=var%20jsquote=(x);&token=beb0a0047196124721f56b0f0ff5a27c&rt=0.6847063523412638");
+            //ReaderJobManger readerJob = new ReaderJobManger();
             readerJob.Run();
 
-            //PaserJobManager<Stock> SHparserJob = new PaserJobManager<Stock>(new SinaHtmlParser());
-            //SHparserJob.SetupTimeInterval(3000);
-            //SHparserJob.Run();
+            PaserJobManager<Stock> parserJob = new PaserJobManager<Stock>(new HtmlParser());
+            parserJob.SetupTimeInterval(120000);
+            parserJob.Run();
 
-            //Persistencer StockPersistencer = new Persistencer();
-            //StockPersistencer.UpdateIntoDB();
+            Persistencer StockPersistencer = new Persistencer();
+            StockPersistencer.CleanDB();
+            StockPersistencer.UpdateIntoDB();
 
-            //PaserJobManager<String> parserJob = new PaserJobManager<String>(new SinaUrlParser());
-            //PaserJobManager<StockHistory> parserJob = new PaserJobManager<StockHistory>(new SinaHtmlParser());
-            //parserJob.SetupTimeInterval(3000);
-            //parserJob.Run();
             Console.ReadLine();
+
+            //URLManager.PrepareSinaURLPool();
+            ////URLPool.Push(@"http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/600016.phtml?year=2012&jidu=2");
+            ////URLPool.Push(@"http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/600016.phtml?year=2008&jidu=4");
+            ////URLPool.Push(@"http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/600016.phtml?year=2003&jidu=2");
+            //URLPool.PoolEmptyEvent += URLPool_PoolEmptyEvent;
+            //readerJob.Run();
+
+            ////PaserJobManager<Stock> SHparserJob = new PaserJobManager<Stock>(new SinaHtmlParser());
+            ////SHparserJob.SetupTimeInterval(3000);
+            ////SHparserJob.Run();
+
+            ////Persistencer StockPersistencer = new Persistencer();
+            ////StockPersistencer.UpdateIntoDB();
+
+            ////PaserJobManager<String> parserJob = new PaserJobManager<String>(new SinaUrlParser());
+            ////PaserJobManager<StockHistory> parserJob = new PaserJobManager<StockHistory>(new SinaHtmlParser());
+            ////parserJob.SetupTimeInterval(3000);
+            ////parserJob.Run();
+            //Console.ReadLine();
             
 
 
@@ -67,7 +67,8 @@ namespace WebSpider
             PaserJobManager<Stock> SHparserJob = new PaserJobManager<Stock>(new SinaHtmlParser());
             SHparserJob.SetupTimeInterval(3000);
             Task.Run(new Action(UpdateDB));
-            //Task.Run(new Action(UpdateDB));
+            Task.Run(new Action(UpdateDB));
+            Task.Run(new Action(UpdateDB));
             SHparserJob.Run();
 
         }

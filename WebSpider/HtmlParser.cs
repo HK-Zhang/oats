@@ -24,6 +24,9 @@ public class HtmlParser : IParser<Stock>
             while ((html = DataPool.Pop()) != DataPool.ENDOFQUEUE)
             {
                 //stockList.Add(ParseHtml(html));
+                if (string.IsNullOrEmpty(html))
+                    continue;
+              
                 Stock stockItem = ParseHtml(html);
                 if (stockItem != null)
                 {

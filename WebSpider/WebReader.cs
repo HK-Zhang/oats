@@ -77,7 +77,10 @@ public class WebReader : IReader
                 Stream ReceiveStream = webresponse.GetResponseStream();
                 StreamReader sr = new StreamReader(ReceiveStream, Encoding.UTF8);
                 string resultstring = sr.ReadToEnd();
-                ReadIntoPool(resultstring);
+                if (!string.IsNullOrEmpty(resultstring))
+                    ReadIntoPool(resultstring);
+                else
+                    URLPool.Push(webrequest.RequestUri.ToString());
             }
         }
         catch (Exception ex)

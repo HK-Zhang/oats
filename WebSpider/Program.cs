@@ -23,7 +23,7 @@ namespace WebSpider
             readerJob.Run();
 
             PaserJobManager<Stock> parserJob = new PaserJobManager<Stock>(new HtmlParser());
-            parserJob.SetupTimeInterval(120000);
+            parserJob.SetupTimeInterval(3000);
             parserJob.Run();
 
             Persistencer StockPersistencer = new Persistencer();

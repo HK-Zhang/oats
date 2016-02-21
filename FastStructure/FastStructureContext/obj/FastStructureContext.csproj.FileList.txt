@@ -1,0 +1,7 @@
+bin\Debug\FastStructureContext.dll
+bin\Debug\FastStructureContext.pdb
+bin\Debug\LAF.dll
+bin\Debug\LAF.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\FastStructureContext.dll
+obj\Debug\FastStructureContext.pdb

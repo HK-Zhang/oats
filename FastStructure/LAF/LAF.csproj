@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0557B73D-B005-4DD1-B1F4-FEACE1929ACA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastStructure.LAF</RootNamespace>
+    <AssemblyName>LAF</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FastStructure\bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\ContextFactory.cs" />
+    <Compile Include="Context\EnumContextPostfix.cs" />
+    <Compile Include="Context\FormContext.cs" />
+    <Compile Include="Context\FormContextFactory.cs" />
+    <Compile Include="Context\IContext.cs" />
+    <Compile Include="Context\IContextAware.cs" />
+    <Compile Include="Context\IContextParameterListener.cs" />
+    <Compile Include="Context\LAFContext.cs" />
+    <Compile Include="Core\ApplicationFramework.cs" />
+    <Compile Include="Core\ApplicationFrameworkFactory.cs" />
+    <Compile Include="Core\Config\ActionDef.cs" />
+    <Compile Include="Core\Config\ActionItem.cs" />
+    <Compile Include="Core\Config\ActionItemSet.cs" />
+    <Compile Include="Core\Config\ActionListenerItem.cs" />
+    <Compile Include="Core\Config\ActionListenerItemSet.cs" />
+    <Compile Include="Core\Config\DataDef.cs" />
+    <Compile Include="Core\Config\EnumActionListenerOccasion.cs" />
+    <Compile Include="Core\Config\EnumInstanceScope.cs" />
+    <Compile Include="Core\Config\EnumParameterOperationType.cs" />
+    <Compile Include="Core\Config\FormDef.cs" />
+    <Compile Include="Core\Config\FormItem.cs" />
+    <Compile Include="Core\Config\FormItemSet.cs" />
+    <Compile Include="Core\Config\ILAFConfiguration.cs" />
+    <Compile Include="Core\Config\ILAFConfigurationDAO.cs" />
+    <Compile Include="Core\Config\LAFConfiguration.cs" />
+    <Compile Include="Core\Config\LAFConfigurationDAO.cs" />
+    <Compile Include="Core\Config\LAFConfigurationDAOFacotry.cs" />
+    <Compile Include="Core\Config\LAFConfigurationSet.cs" />
+    <Compile Include="Core\Config\LogDef.cs" />
+    <Compile Include="Core\Config\LogItem.cs" />
+    <Compile Include="Core\Config\ParameterListenerItem.cs" />
+    <Compile Include="Core\Config\ParameterListenerItemSet.cs" />
+    <Compile Include="Core\Events\AbstractEvent.cs" />
+    <Compile Include="Core\Events\AbstractListener.cs" />
+    <Compile Include="Core\Events\AfterActionExecuteEvent.cs" />
+    <Compile Include="Core\Events\BeforeActionExecuteEvent.cs" />
+    <Compile Include="Core\Events\EventFactroy.cs" />
+    <Compile Include="Core\Events\ExceptionOccuredEvent.cs" />
+    <Compile Include="Core\Events\FormDataValidateEvent.cs" />
+    <Compile Include="Core\Events\FormRequestEvent.cs" />
+    <Compile Include="Core\Events\IEvent.cs" />
+    <Compile Include="Core\Events\IListener.cs" />
+    <Compile Include="Core\Events\ParameterEvent.cs" />
+    <Compile Include="Core\IApplicationFramework.cs" />
+    <Compile Include="Core\ILAFBuilder.cs" />
+    <Compile Include="Core\LAFActions\AbstractAction.cs" />
+    <Compile Include="Core\LAFActions\IAction.cs" />
+    <Compile Include="Core\LAFBuilder.cs" />
+    <Compile Include="Core\LAFBuilderFactory.cs" />
+    <Compile Include="Core\LAFManager.cs" />
+    <Compile Include="Core\Pool\IObjectPool.cs" />
+    <Compile Include="Core\Pool\LAFObjectPool.cs" />
+    <Compile Include="Core\Pool\ObjectPoolFactory.cs" />
+    <Compile Include="Core\Utilities\ReflectUtil.cs" />
+    <Compile Include="Core\Validation\IValidatable.cs" />
+    <Compile Include="Core\Validation\ValidateMessage.cs" />
+    <Compile Include="Core\Validation\ValidateMessageFactory.cs" />
+    <Compile Include="Exceptions\AbstractException.cs" />
+    <Compile Include="Exceptions\ConfigurationLoadException.cs" />
+    <Compile Include="Exceptions\ConfigurationNotValidException.cs" />
+    <Compile Include="Exceptions\ConfigurationSaveException.cs" />
+    <Compile Include="Exceptions\ContentExistException.cs" />
+    <Compile Include="Exceptions\ExceptionFormItem.cs" />
+    <Compile Include="Exceptions\FastStructureException.cs" />
+    <Compile Include="Exceptions\FastStructureExceptionMethod.cs" />
+    <Compile Include="Exceptions\FastStructureLogLevel.cs" />
+    <Compile Include="Exceptions\LAFObjectPoolException.cs" />
+    <Compile Include="Exceptions\NullReferenceException.cs" />
+    <Compile Include="Exceptions\SameNameException.cs" />
+    <Compile Include="GenericType\ArrayList.cs" />
+    <Compile Include="LAFComponents\LAFForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LAFLog\ILog.cs" />
+    <Compile Include="LAFLog\ILoggerManager.cs" />
+    <Compile Include="Messages\CommonParameterParser.cs" />
+    <Compile Include="Messages\ContextParameterParser.cs" />
+    <Compile Include="Messages\IMessageParser.cs" />
+    <Compile Include="Messages\Message.cs" />
+    <Compile Include="Messages\MessageLoader.cs" />
+    <Compile Include="Messages\MessageManager.cs" />
+    <Compile Include="Messages\MessageSet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Schema\XML\LAF.conf" />
+    <None Include="Schema\XML\Log.Conf" />
+    <None Include="Schema\XML\Messages.res">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>
+      </SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

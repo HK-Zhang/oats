@@ -1,0 +1,7 @@
+F:\VS\FastStructure\Data\bin\Debug\Data.dll
+F:\VS\FastStructure\Data\bin\Debug\Data.pdb
+F:\VS\FastStructure\Data\bin\Debug\LAF.dll
+F:\VS\FastStructure\Data\bin\Debug\LAF.pdb
+F:\VS\FastStructure\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+F:\VS\FastStructure\Data\obj\Debug\Data.dll
+F:\VS\FastStructure\Data\obj\Debug\Data.pdb

@@ -1,0 +1,14 @@
+2008-01-24 13:59:15,656 [2336] ERROR MainForm [(null)] - Log Myself!
+2008-01-24 15:39:21,234 [1196] ERROR MainForm [(null)] - Log Myself!
+2008-01-24 17:09:54,375 [1160] ERROR System.Exception: Show Exception Form!
+   at FastStructure.GUI.MainForm.btnExceptionFm_Click(Object sender, EventArgs e) in F:\Projects\FastStructure\Components\MainForm.cs:line 43
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at System.Windows.Forms.Button.OnClick(EventArgs e)
+   at System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   at System.Windows.Forms.Button.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam) [(null)] - Show Exception Form!

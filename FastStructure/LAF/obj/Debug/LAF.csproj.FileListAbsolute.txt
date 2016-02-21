@@ -1,0 +1,6 @@
+F:\VS\FastStructure\LAF\bin\Debug\LAF.dll
+F:\VS\FastStructure\LAF\bin\Debug\LAF.pdb
+F:\VS\FastStructure\LAF\bin\Debug\log4net.dll
+F:\VS\FastStructure\LAF\obj\Debug\LAF.csprojResolveAssemblyReference.cache
+F:\VS\FastStructure\LAF\obj\Debug\LAF.dll
+F:\VS\FastStructure\LAF\obj\Debug\LAF.pdb

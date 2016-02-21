@@ -1,0 +1,7 @@
+F:\VS\FastStructure\FastStructureContext\bin\Debug\FastStructureContext.dll
+F:\VS\FastStructure\FastStructureContext\bin\Debug\FastStructureContext.pdb
+F:\VS\FastStructure\FastStructureContext\bin\Debug\LAF.dll
+F:\VS\FastStructure\FastStructureContext\bin\Debug\LAF.pdb
+F:\VS\FastStructure\FastStructureContext\obj\Debug\FastStructureContext.csprojResolveAssemblyReference.cache
+F:\VS\FastStructure\FastStructureContext\obj\Debug\FastStructureContext.dll
+F:\VS\FastStructure\FastStructureContext\obj\Debug\FastStructureContext.pdb

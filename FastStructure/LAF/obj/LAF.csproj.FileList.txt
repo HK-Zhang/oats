@@ -1,0 +1,6 @@
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\LAF.dll
+bin\Debug\LAF.pdb
+obj\Debug\LAF.dll
+obj\Debug\LAF.pdb
+bin\Debug\log4net.dll
